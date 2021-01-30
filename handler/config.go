@@ -17,7 +17,8 @@ type NicInterfacesOpt struct {
 
 //Conf Conf
 type Conf struct {
-	NicCfgs NicInterfacesOpt `yaml:"NicCfgs"`
+	DnsDefault string `yaml:"DnsDefault"`
+	NicCfgs []NicInterfacesOpt `yaml:"NicCfgs"`
 	
 }
 
@@ -42,7 +43,7 @@ func LoadConf(path string) error {
 }
 
 //Get return config
-func Get() *Conf {
+func GetConf() *Conf {
 	return config
 }
 

@@ -2,6 +2,7 @@ package main
 
 
 import (
+	"time"
 	"github.com/xiaofeng-zerone/iponline/handler"
 )
 
@@ -13,7 +14,10 @@ func main() {
 	handler.LoadConf("./conf/app.yml")
 
 	for(true){
+		handler.DnsCheck()
 
+
+		time.Sleep(5*time.Second)
 	}
 	handler.UnInitLogger()
 }

@@ -1,5 +1,14 @@
 
 
 
-NicCfgs:
+
+DnsDefault: 8.8.8.8
+
+NicCfgs: [
   ONBOOT: 'yes'
+
+
+  ,
+
+  ONBOOT: 'no'
+]
