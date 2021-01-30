@@ -15,7 +15,7 @@ func main() {
 
 	for(true){
 		handler.DnsCheck()
-
+		handler.PingCheck()
 
 		time.Sleep(5*time.Second)
 	}
