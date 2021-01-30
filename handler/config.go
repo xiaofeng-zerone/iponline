@@ -11,15 +11,18 @@ var (
 
 // NicInterfacesOpt  
 type NicInterfacesOpt struct {
-	ONBOOT           string `yaml:"ONBOOT"`
-	
+	DEVICE				string `yaml:"DEVICE"`
+	IPADDR          	string `yaml:"IPADDR"`
+	NETMASK           	string `yaml:"NETMASK"`
 }
 
 //Conf Conf
 type Conf struct {
 	DnsDefault string `yaml:"DnsDefault"`
-	NicCfgs []NicInterfacesOpt `yaml:"NicCfgs"`
-	
+	Ipv4GatewayDefault string `yaml:"Ipv4GatewayDefault"`
+	Ipv6GatewayDefault string `yaml:"Ipv6GatewayDefault"`
+	NicCfgs NicInterfacesOpt `yaml:"NicCfgs"`
+
 }
 
 // LoadConf

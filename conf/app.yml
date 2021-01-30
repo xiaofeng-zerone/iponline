@@ -2,13 +2,12 @@
 
 
 
-DnsDefault: 8.8.8.8
+DnsDefault: '8.8.8.8'
 
-NicCfgs: [
-  ONBOOT: 'yes'
+Ipv4GatewayDefault: '192.168.11.1'
+Ipv6GatewayDefault: ''
 
-
-  ,
-
-  ONBOOT: 'no'
-]
+NicCfgs:
+  DEVICE: 'eno2'
+  IPADDR: '192.168.11.102'
+  NETMASK: '255.255.255.0'
