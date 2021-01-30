@@ -2,20 +2,18 @@ package main
 
 
 import (
-	"go.uber.org/zap"
+	"github.com/xiaofeng-zerone/iponlin/handler"
 )
 
-var zlog *zap.SugaredLogger
 
-func InitLogger() {
-	logger, _ := zap.NewProduction()
-	zlog = logger.Sugar()
-}
 
-func main(){
+func main() {
 	InitLogger()
     defer zlog.Sync()
 	zlog.Infof("hello iponline")
+
+	handler.LoadConf("./conf/app.conf")
+
 	for(true){
 
 	}
