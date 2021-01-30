@@ -1,5 +1,10 @@
 package handler
 
+import (
+	"io/ioutil"
+	"gopkg.in/yaml.v2"
+)
+
 var (
 	config *Conf
 )
@@ -26,13 +31,14 @@ func LoadConf(path string) error {
 		return err
 	}
 
-	err := yaml.Unmarshal(cfg, &config)
+	err = yaml.Unmarshal(cfg, &config)
 	if err != nil {
 		zlog.Errorf("yaml Unmarshal error: %v", err)
 		return err
 	}
 
 	zlog.Infof("config dump:", config)
+	return nil
 }
 
 //Get return config

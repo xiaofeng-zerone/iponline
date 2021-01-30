@@ -11,3 +11,8 @@ func InitLogger() {
 	logger, _ := zap.NewProduction()
 	zlog = logger.Sugar()
 }
+
+//UnInitLogger uninit log
+func UnInitLogger() {
+	zlog.Sync()
+}

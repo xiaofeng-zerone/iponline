@@ -2,21 +2,20 @@ package main
 
 
 import (
-	"github.com/xiaofeng-zerone/iponlin/handler"
+	"github.com/xiaofeng-zerone/iponline/handler"
 )
 
 
 
 func main() {
-	InitLogger()
-    defer zlog.Sync()
-	zlog.Infof("hello iponline")
+	handler.InitLogger()
 
-	handler.LoadConf("./conf/app.conf")
+	handler.LoadConf("./conf/app.yml")
 
 	for(true){
 
 	}
+	handler.UnInitLogger()
 }
 
 
