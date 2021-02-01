@@ -51,8 +51,12 @@ func NicAddrAllDel(intf_name string) {
 func NicIpSet() {
 	gcfg := GetConf()
 	nicCfg := gcfg.NicCfgs
-	NicAddrAllDel(nicCfg.DEVICE)
-	NicAddrInfoAdd(nicCfg.DEVICE, nicCfg.IPADDR, nicCfg.NETMASK)
+	if len(nicCfg.DEVICE) > 0 &&
+		len(nicCfg.IPADDR) > 0 && 
+		len(nicCfg.NETMASK) > 0 {
+		NicAddrAllDel(nicCfg.DEVICE)
+		NicAddrInfoAdd(nicCfg.DEVICE, nicCfg.IPADDR, nicCfg.NETMASK)
+	}
 }
 
 
